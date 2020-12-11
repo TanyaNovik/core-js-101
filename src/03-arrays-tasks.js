@@ -332,8 +332,35 @@ function getPositivesCount(arr) {
  *   [ 'nine','eight','nine','eight'] => [ 'eight','eight','nine','nine']
  *   [ 'one','one','one','zero' ]     => [ 'zero','one','one','one' ]
  */
-function sortDigitNamesByNumericOrder(/* arr */) {
-  throw new Error('Not implemented');
+function sortDigitNamesByNumericOrder(arr) {
+  function getNumber(number) {
+    switch (number) {
+      case 'zero':
+        return 0;
+      case 'one':
+        return 1;
+      case 'two':
+        return 2;
+      case 'three':
+        return 3;
+      case 'four':
+        return 4;
+      case 'five':
+        return 5;
+      case 'six':
+        return 6;
+      case 'seven':
+        return 7;
+      case 'eight':
+        return 8;
+      case 'nine':
+        return 9;
+      default:
+        return null;
+    }
+  }
+
+  return arr.sort((a, b) => getNumber(a) - getNumber(b));
 }
 
 /**
@@ -491,6 +518,10 @@ function getIdentityMatrix(n) {
  */
 function getIntervalArray(/* start, end */) {
   throw new Error('Not implemented');
+
+  // console.log('!!!!!', start);
+  //
+  // return (start + (start !== end ? getIntervalArray(start + 1, end) : end));
 }
 
 /**
